@@ -1,0 +1,7 @@
+<!-- Partial that shows an individual friend -->
+<a href="#!/"> Logout </a> | <a href="#!/question/{{question._id}}/new_answer"> Answer this Question </a> | <a href="#!/question"> Back to All Questions </a>
+<h2> {{question.user}} asked: {{question.question}}</h2>
+<h3> <em> {{question.description}} </em> </h3>
+<hr>
+<h3> Answers: </h3>
+  <p ng-repeat="answer in answers | orderBy: '-like_count'"> <b>{{answer.user}}</b> says: {{answer.answer}} <br> <em>{{answer.details}}</em> | <button ng-click="likeAnswer(answer._id)">Like this answer</button> | {{answer.like_count}} likes </p>

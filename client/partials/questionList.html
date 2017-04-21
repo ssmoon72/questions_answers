@@ -1,0 +1,25 @@
+<!-- Partial that shows when viewing all friends -->
+<div class="row">
+  <h2> {{user.name}} </h2>
+  <a href="#!/new_question"> Create Question </a> |
+  <a href="#!/"> Logout </a>
+  <table class='col s8'>
+    <thead>
+      <tr>
+        <th> Question </th>
+        <th> Answers </th>
+        <th> Action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='question in questions | orderBy: sortType: sortReverse | filter: {question: nameFilter}'>
+        <td> {{question.question}} </td>
+        <td> {{question.answer_count}} </td>
+        <td> <a href="#!/question/show/{{question._id}}"> Show </a> | <a href="#!/question/{{question._id}}/new_answer"> Answer</a> </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class='input-field col s4'>
+    <input id="name_search" type="text" placeholder="Filter by question" ng-model="nameFilter">
+  </div>
+</div>

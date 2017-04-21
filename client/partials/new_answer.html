@@ -1,0 +1,13 @@
+<!-- Partial that shows when creating a new friend -->
+<h2 class="center-align">New Answer, {{user.name}}</h2>
+<a href="#!/"> Logout </a> | <a href="#!/question/show/{{question._id}}"> Back to the question </a> |<a href="#!/question">Back to All Questions</a>
+<h2> Question: {{question.question}} </h2>
+<div class="row">
+  <form ng-submit="createAnswer()" class='col s6 push-s3 pull-s3'>
+    <label for="question"> Answer: </label>
+    <textarea name="question" rows="8" cols="80" ng-model= "newAnswer.answer"></textarea>
+    <label for="description">Details: </label>
+    <textarea name="description" rows="8" cols="80" ng-model= "newAnswer.details"></textarea>
+    <input type="submit" name="submit" value="Add New answer">
+  </form>
+</div>
